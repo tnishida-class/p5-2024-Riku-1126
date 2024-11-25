@@ -23,7 +23,7 @@ function draw() {
   // テキスト表示の処理
   if (keyIsDown("I".charCodeAt(0)) && keyIsDown("T".charCodeAt(0))) { // 'I' と 'T'のキーコード
     textSize(50);
-    fill("#c71585"); // ピンク色
+    fill("#c71585"); //https://developer.mozilla.org/ja/docs/Web/CSS/named-color
     text("Global Culture", 50, 200);
   }
 
@@ -62,14 +62,14 @@ function drawstar(cx, cy, r) {
 }
 
 // グラデーション背景を描く関数
-function setGradient(x, y, w, h, c1, c2) {//setGradient(x)
+function setGradient(x, y, w, h, c1, c2) {//x,y:開始地点。w:幅。h:高さ。c1,c2開始の色と終了の色。
   noFill();
   for (let i = 0; i <= h; i++) {
-    // y座標に対して0から1の範囲で補間
-    let inter = map(i, 0, h, 0, 1); 
+    // y座標に対して0から1の範囲でグラデ
+    let inter = map(i, 0, h, 0, 1); //iの値0-hを0-1に変換
     let c = lerpColor(c1, c2, inter); // 2色の補間
     stroke(c);
-    strokeWeight(1); // 線の幅を1に設定
+    strokeWeight(0.5); // 線の幅0.5
     line(x, y + i, x + w, y + i); // 横に線を描いてグラデーションを作る
   }
 }
