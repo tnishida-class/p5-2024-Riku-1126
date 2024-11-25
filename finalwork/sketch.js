@@ -1,6 +1,6 @@
 // 最終課題を制作しよう
 let stars = []; // 流れ星を格納する配列
-let numStars = 6; // 流れ星の数
+let numStars = 8; // 流れ星の数
 
 function setup() {
   createCanvas(400, 400);
@@ -11,7 +11,7 @@ function setup() {
       x: random(-width, 0), // 画面外左から出現
       y: random(height), // ランダムなY座標
       size: random(10, 20), // ランダムな大きさ
-      speed: random(3,8) // ランダムな速度
+      speed: random(2,6) // ランダムな速度
     });
   }
 }
@@ -62,7 +62,7 @@ function drawstar(cx, cy, r) {
 }
 
 // グラデーション背景を描く関数
-function setGradient(x, y, w, h, c1, c2) {
+function setGradient(x, y, w, h, c1, c2) {//setGradient(x)
   noFill();
   for (let i = 0; i <= h; i++) {
     // y座標に対して0から1の範囲で補間
